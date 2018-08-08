@@ -10,6 +10,10 @@ const Settings = () => import('~/pages/settings/index').then(m => m.default || m
 const SettingsProfile = () => import('~/pages/settings/profile').then(m => m.default || m)
 const SettingsPassword = () => import('~/pages/settings/password').then(m => m.default || m)
 
+const Admin = () => import('~/pages/admin/index').then(m => m.default || m)
+const AdminDashboard = () => import('~/pages/admin/dashboard').then(m => m.default || m)
+const AdminProducts = () => import('~/pages/admin/products').then(m => m.default || m)
+
 export default [
   { path: '/', name: 'welcome', component: Welcome },
 
@@ -25,7 +29,17 @@ export default [
       { path: '', redirect: { name: 'settings.profile' } },
       { path: 'profile', name: 'settings.profile', component: SettingsProfile },
       { path: 'password', name: 'settings.password', component: SettingsPassword }
-    ] },
+    ]
+  },
+
+  { path: '/admin',
+    component: Admin,
+    children: [
+      { path: '', redirect: { name: 'admin.dashboard' } },
+      { path: 'dashboard', name: 'admin.dashboard', component: AdminDashboard },
+      { path: 'products', name: 'admin.products', component: AdminProducts }
+    ]
+  },
 
   { path: '*', component: NotFound }
 ]
