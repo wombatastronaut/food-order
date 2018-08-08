@@ -55,6 +55,7 @@
 <script>
 import Form from 'vform'
 import LoginWithGithub from '~/components/LoginWithGithub'
+import { mapGetters } from 'vuex'
 
 export default {
   middleware: 'guest',
@@ -75,6 +76,10 @@ export default {
     remember: false
   }),
 
+  computed: mapGetters({
+    user: 'auth/user'
+  }),
+
   methods: {
     async login () {
       // Submit the form.
@@ -86,11 +91,16 @@ export default {
         remember: this.remember
       })
 
-      // Fetch the user.
+      // Fetch the user
       await this.$store.dispatch('auth/fetchUser')
+      
+      // Chek if the user is admin
+      if (this.user.role === 0) {
+        return this.$router.push({ name: 'admin.dashboard' })  
+      }
 
-      // Redirect home.
-      this.$router.push({ name: 'home' })
+      // Redirect home
+      return this.$router.push({ name: 'home' })
     }
   }
 }
