@@ -35,3 +35,4 @@ Route::group(['middleware' => 'guest:api'], function () {
 });
 
 Route::get('products', 'ProductsController@index')->name('products');
+Route::get('categories', 'CategoriesController@index')->name('categories');

@@ -1,6 +1,7 @@
 import axios from 'axios'
 import Cookies from 'js-cookie'
 import * as types from '../mutation-types'
+import { serialize } from '~/helpers/utils'
 
 // state
 export const state = {
@@ -21,18 +22,28 @@ export const mutations = {
   },
 
   [types.FETCH_PRODUCTS_FAILURE] (state) {
+  },
+
+  [types.UPDATE_PRODUCTS_FILTER] (state, payload) {
+    state.filters[payload.field] = payload.value
   }
 }
 
 // actions
 export const actions = {
-  async fetchProducts ({ commit }) {
+  async fetchProducts ({ commit }, payload) {
+    let queryString = serialize(Object.assign(state.filters, { page: payload.page }))
+
     try {
-      const { data } = await axios.get('/api/products')
+      const { data } = await axios.get(`/api/products?${queryString}`)
 
       commit(types.FETCH_PRODUCTS_SUCCESS, { products: data })
     } catch (e) {
       commit(types.FETCH_PRODUCTS_FAILURE)
     }
+  },
+
+  updateProductsFilter({ commit }, payload) {
+    commit(types.UPDATE_PRODUCTS_FILTER, payload)
   }
 }

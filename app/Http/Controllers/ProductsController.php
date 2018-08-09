@@ -9,6 +9,18 @@ class ProductsController extends Controller
 {
     public function index()
     {
-        return Product::all();
+        $category = request('category');
+
+        return Product::selectRaw('
+                            id,
+                            CONCAT(UPPER(LEFT(name, 1)), SUBSTRING(name, 2)) AS name,
+                            category_id,
+                            description,
+                            price
+                        ')
+                        ->when($category, function($query, $category) {
+                            return $query->where('category_id', $category);
+                        })
+                        ->paginate(6);
     }
 }
