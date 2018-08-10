@@ -13,6 +13,7 @@ const SettingsPassword = () => import('~/pages/settings/password').then(m => m.d
 const Admin = () => import('~/pages/admin/index').then(m => m.default || m)
 const AdminDashboard = () => import('~/pages/admin/dashboard').then(m => m.default || m)
 const AdminProducts = () => import('~/pages/admin/products').then(m => m.default || m)
+const AdminCategories = () => import('~/pages/admin/categories').then(m => m.default || m)
 
 export default [
   { path: '/', name: 'welcome', component: Welcome },
@@ -37,7 +38,9 @@ export default [
     children: [
       { path: '', redirect: { name: 'admin.dashboard' } },
       { path: 'dashboard', name: 'admin.dashboard', component: AdminDashboard },
-      { path: 'products', name: 'admin.products', component: AdminProducts }
+      { path: 'products', name: 'admin.products', component: AdminProducts },
+      { path: 'categories', name: 'admin.categories', component: AdminCategories },
+      { path: 'orders', name: 'admin.orders', component: AdminCategories }
     ]
   },
 

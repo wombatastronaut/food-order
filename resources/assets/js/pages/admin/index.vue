@@ -30,13 +30,23 @@ export default {
       return [
         {
           icon: 'user',
-          name: this.$t('dashboard'),
+          name: 'Dashboard',
           route: 'admin.dashboard'
         },
         {
           icon: 'lock',
-          name: this.$t('products'),
+          name: 'Products',
           route: 'admin.products'
+        },
+        {
+          icon: 'lock',
+          name: 'Categories',
+          route: 'admin.categories'
+        },
+        {
+          icon: 'lock',
+          name: 'Orders',
+          route: 'admin.orders'
         }
       ]
     }

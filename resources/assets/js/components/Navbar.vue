@@ -11,15 +11,29 @@
 
       <div id="navbarToggler" class="collapse navbar-collapse">
         <ul class="navbar-nav">
-          <locale-dropdown/>
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li> -->
+          <li class="nav-item">
+            <a href="" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link">About</a>
+          </li>
+            <li class="nav-item">
+            <a href="" class="nav-link">Contact</a>
+          </li>
         </ul>
 
         <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="" class="nav-link position-relative">
+              <fa icon="shopping-cart" style="font-size: 1rem;" />
+              <span class="badge badge-count">3</span>
+            </a>
+          </li>
           <!-- Authenticated -->
-          <li v-if="user" class="nav-item dropdown">
+          <!-- <li v-if="user" class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-dark"
                href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <img :src="user.photo_url" class="rounded-circle profile-photo mr-1">
@@ -37,9 +51,9 @@
                 {{ $t('logout') }}
               </a>
             </div>
-          </li>
+          </li> -->
           <!-- Guest -->
-          <template v-else>
+          <!-- <template v-else>
             <li class="nav-item">
               <router-link :to="{ name: 'login' }" class="nav-link" active-class="active">
                 {{ $t('login') }}
@@ -50,7 +64,7 @@
                 {{ $t('register') }}
               </router-link>
             </li>
-          </template>
+          </template> -->
         </ul>
       </div>
     </div>
@@ -87,6 +101,12 @@ export default {
 </script>
 
 <style scoped>
+.badge-count {
+  position: absolute;
+  top: 0;
+  right: -5px;
+}
+
 .profile-photo {
   width: 2rem;
   height: 2rem;
