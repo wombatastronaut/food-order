@@ -16,11 +16,12 @@
     <div class="row">
       <div class="col-md-4 mb-5" v-for="product in products.data" :key="product.id">
           <div class="card">
-              <img class="card-img-top" src="http://via.placeholder.com/350x150" :alt="product.name">
+              <img class="card-img-top" :src="product.image" :alt="product.name" style="height: 200px;">
               <div class="card-body">
                 <h5 class="card-title">{{ product.name }}</h5>
                 <p class="card-text">{{ product.description }}</p>
-                <a href="#" class="btn btn-primary" @click="addToCart(product)">Add To Cart</a>
+                <a href="#" class="btn btn-primary float-left" v-if="user" @click="addToCart(product)">Add To Cart</a>
+                <span class="float-right mt-2">{{ product.price | formatMoney }}</span>
               </div>
           </div>
       </div>
@@ -51,6 +52,7 @@ export default {
   }),
 
   computed: mapGetters({
+    user: 'auth/user',
     products: 'products/products'
   }),
 

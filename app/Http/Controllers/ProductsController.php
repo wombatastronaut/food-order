@@ -16,6 +16,7 @@ class ProductsController extends Controller
                             CONCAT(UPPER(LEFT(name, 1)), SUBSTRING(name, 2)) AS name,
                             category_id,
                             description,
+                            image,
                             price
                         ')
                         ->when($category, function($query, $category) {

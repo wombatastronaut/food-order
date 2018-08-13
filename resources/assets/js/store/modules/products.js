@@ -24,8 +24,8 @@ export const mutations = {
   [types.FETCH_PRODUCTS_FAILURE] (state) {
   },
 
-  [types.UPDATE_PRODUCTS_FILTER] (state, payload) {
-    state.filters[payload.field] = payload.value
+  [types.UPDATE_PRODUCTS_FILTER] (state, filter) {
+    state.filters[filter.field] = filter.value
   }
 }
 

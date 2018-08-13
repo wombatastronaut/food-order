@@ -100,7 +100,7 @@ export default {
       }
 
       // Redirect home
-      return this.$router.push({ name: 'home' })
+      return this.$router.push({ name: 'welcome' })
     }
   }
 }

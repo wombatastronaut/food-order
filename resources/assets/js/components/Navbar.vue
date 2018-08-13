@@ -1,7 +1,7 @@
 <template>
-  <nav class="navbar navbar-expand-lg fixed-top">
+  <nav id="main-nav" class="navbar navbar-expand-lg fixed-top">
     <div class="container">
-      <router-link :to="{ name: user ? 'home' : 'welcome' }" class="navbar-brand">
+      <router-link :to="{ name: 'welcome' }" class="navbar-brand">
         {{ appName }}
       </router-link>
 
@@ -12,10 +12,9 @@
       <div id="navbarToggler" class="collapse navbar-collapse">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a href="" class="nav-link">Home</a>
-          </li>
-          <li class="nav-item">
-            <a href="" class="nav-link">Menu</a>
+            <router-link :to="{ name: 'welcome' }" class="nav-link" active-class="active">
+              Home
+            </router-link>
           </li>
           <li class="nav-item">
             <a href="" class="nav-link">About</a>
@@ -26,15 +25,16 @@
         </ul>
 
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a href="" class="nav-link position-relative">
-              <fa icon="shopping-cart" style="font-size: 1rem;" />
-              <span class="badge badge-count">3</span>
-            </a>
-          </li>
           <!-- Authenticated -->
-          <!-- <li v-if="user" class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-dark"
+          <li class="nav-item" v-if="user">
+            <router-link :to="{ name: 'cart' }" class="nav-link position-relative" active-class="active">
+              <fa icon="shopping-cart" style="font-size: 1rem;" />
+              <span class="badge badge-count" v-if="cartItemsCount > 0">{{ cartItemsCount }}</span>
+            </router-link>
+          </li>
+
+          <li class="nav-item dropdown" v-if="user">
+            <a class="nav-link dropdown-toggle"
                href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <img :src="user.photo_url" class="rounded-circle profile-photo mr-1">
               {{ user.name }}
@@ -51,9 +51,9 @@
                 {{ $t('logout') }}
               </a>
             </div>
-          </li> -->
+          </li>
           <!-- Guest -->
-          <!-- <template v-else>
+          <template v-if="!user">
             <li class="nav-item">
               <router-link :to="{ name: 'login' }" class="nav-link" active-class="active">
                 {{ $t('login') }}
@@ -64,7 +64,7 @@
                 {{ $t('register') }}
               </router-link>
             </li>
-          </template> -->
+          </template>
         </ul>
       </div>
     </div>
@@ -85,7 +85,8 @@ export default {
   }),
 
   computed: mapGetters({
-    user: 'auth/user'
+    user: 'auth/user',
+    cartItemsCount: 'cart/itemsCount'
   }),
 
   methods: {
@@ -111,5 +112,22 @@ export default {
   width: 2rem;
   height: 2rem;
   margin: -.375rem 0;
+}
+
+#main-nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  box-shadow: none
+}
+.navbar-brand {
+  color: #ffffff;
+}
+
+.navbar-nav .nav-link {
+  color: #ffffff;
+  font-weight: 500;
 }
 </style>
