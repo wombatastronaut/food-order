@@ -1,0 +1,2 @@
+webpackJsonp([16],{AUav:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r={render:function(){var e=this.$createElement;return(this._self._c||e)("card",{attrs:{title:this.$t("dashboard")}},[this._v("\n  Dashboard\n")])},staticRenderFns:[]},s=n("VU/8")({},r,!1,null,null,null);t.default=s.exports}});
+//# sourceMappingURL=16.051c375998f490b07098.js.map
