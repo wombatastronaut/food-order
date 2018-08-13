@@ -1,16 +1,7 @@
 {
-    "/js/lang-zh-CN.9dc176ebe98d02a5c134.js": "/js/lang-zh-CN.9dc176ebe98d02a5c134.js?id=1257d3660dfcbac3686c",
-    "/js/lang-zh-CN.9dc176ebe98d02a5c134.js.map": "/js/lang-zh-CN.9dc176ebe98d02a5c134.js.map?id=094878c668353d0860fd",
-    "/js/lang-es.2ef093cf9e3bc265932f.js": "/js/lang-es.2ef093cf9e3bc265932f.js?id=007e30d1cdf70542875c",
-    "/js/lang-es.2ef093cf9e3bc265932f.js.map": "/js/lang-es.2ef093cf9e3bc265932f.js.map?id=e194c178bb66f9161d13",
-    "/js/lang-en.0ce954932823e68d0d14.js": "/js/lang-en.0ce954932823e68d0d14.js?id=ee1916ad1b26660d0ab6",
-    "/js/lang-en.0ce954932823e68d0d14.js.map": "/js/lang-en.0ce954932823e68d0d14.js.map?id=e2f7fafb162d8811fd28",
-    "/js/vendor.js": "/js/vendor.js?id=96bba0fd5d1c9a6c7119",
-    "/js/vendor.js.map": "/js/vendor.js.map?id=d055d7231b6126363165",
-    "/js/app.js": "/js/app.js?id=e3a1cd1fe03e901093ba",
-    "/css/app.css": "/css/app.css?id=cbef878a75345dbe1f57",
-    "/js/app.js.map": "/js/app.js.map?id=f5b4755ba8114a56fc2a",
-    "/css/app.css.map": "/css/app.css.map?id=9f510ad15615c16f07f1",
-    "/js/manifest.js": "/js/manifest.js?id=14237c059fd5bce799d8",
-    "/js/manifest.js.map": "/js/manifest.js.map?id=99e388a032acf73bafe1"
+    "/js/lang-zh-CN.c47ce5ae0ba5ee2799c1.js": "/js/lang-zh-CN.c47ce5ae0ba5ee2799c1.js",
+    "/js/lang-es.e7c91639d703607cea3d.js": "/js/lang-es.e7c91639d703607cea3d.js",
+    "/js/lang-en.5b36818de434ba59e004.js": "/js/lang-en.5b36818de434ba59e004.js",
+    "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css"
 }

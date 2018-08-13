@@ -89,6 +89,10 @@ export default {
     cartItemsCount: 'cart/itemsCount'
   }),
 
+  mounted () {
+    console.log(document.scrollTop)
+  },
+
   methods: {
     async logout () {
       // Log out the user.

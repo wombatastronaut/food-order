@@ -3,9 +3,11 @@
     <navbar/>
 
     <div class="hero">
-      <div class="background-overlay"></div>
+      <div class="hero-content d-flex align-items-center align-content-center background-overlay">
+        <h1 class="text-center w-100 font-weight-bold">Food Order</h1>
+      </div>
     </div>
-  
+
     <div class="container mt-4">
       <child/>
     </div>
